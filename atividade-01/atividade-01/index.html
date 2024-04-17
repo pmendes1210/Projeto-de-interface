@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Drone FPV</title>
+</head>
+
+<body>
+    <!-- títulos  -->
+    <h1 align="center">Drone FPV - pedro h</h1>
+    <br />
+    <!-- títulos  -->
+    <h2 align="center">Modalidades De Drones FPV</h2>
+    <br />
+    <!-- O conteúdo do parágrafo e sobre a modalidade Racing -->
+    <p><b>Racing:</b> a <u>modalidade de corrida é uma das mais populares no mundo dos drones FPV</u>. Nessa modalidade,
+        os
+        pilotos competem em pistas especialmente projetadas, passando por obstáculos e tentando completar o percurso o
+        mais rápido possível. Os drones de corrida são projetados para serem leves, rápidos e manobráveis, e os pilotos
+        usam óculos FPV para ver em primeira pessoa o que o drone está vendo. Essa modalidade é extremamente desafiadora
+        e emocionante, exigindo habilidades de pilotagem precisas e rápidas. Os pilotos devem ser capazes de manobrar
+        seus drones com velocidade e agilidade, evitando colisões com obstáculos e outros drones. Além disso, é
+        importante ter um conhecimento aprofundado dos sistemas eletrônicos e mecânicos dos drones, para garantir que o
+        equipamento esteja em condições ideais para a competição.</p>
+    <!-- O conteúdo do parágrafo e sobre a modalidade freeetyle -->
+    <p><b>Freestyle:</b>a <u>modalidade de freestyle é mais focada em acrobacias e manobras</u>, em vez de competição.
+        Os
+        pilotos de freestyle usam drones com maior capacidade de manobra e estabilidade, e realizam acrobacias
+        impressionantes enquanto gravam vídeos para compartilhar nas redes sociais. Essa modalidade é mais criativa e
+        menos restrita do que a corrida, permitindo aos pilotos explorar diferentes estilos e técnicas. Os pilotos de
+        freestyle têm mais liberdade para criar seus próprios desafios e rotas, tornando cada sessão de voo única e
+        empolgante. A modalidade requer habilidades de pilotagem avançadas e uma boa compreensão da física do voo, pois
+        os pilotos devem controlar seus drones de forma precisa enquanto realizam manobras complexas. Além disso, a
+        criatividade é um elemento-chave na modalidade, já que os pilotos estão sempre buscando novas maneiras de
+        impressionar o público.</p>
+    <!-- O conteúdo do parágrafo e sobre a modalidade long-range -->
+    <p><b>Long-range:</b>a <u>modalidade de long-range envolve voar com drones a grandes distâncias</u>, muitas vezes
+        com o
+        objetivo de capturar imagens ou vídeos de locais remotos. Os drones usados nessa modalidade geralmente têm uma
+        maior autonomia de voo e equipamentos de transmissão de sinal mais poderosos, para permitir que os pilotos
+        mantenham contato com seus drones mesmo a quilômetros de distância. Essa modalidade é ideal para pilotos que
+        buscam desafios técnicos e explorar paisagens remotas. Os pilotos precisam ter um conhecimento avançado de
+        navegação por GPS, já que muitas vezes estão voando em áreas desconhecidas. Além disso, é importante ter
+        habilidades de comunicação e segurança, para garantir que o drone esteja sempre dentro do alcance do controle e
+        que não cause riscos a pessoas ou animais.</p>
+    <!-- O conteúdo do parágrafo e sobre a modalidade cenematografia -->
+    <p><b>Cinematografia:</b>a <u>Cinematografia é uma das modalidades mais criativas do mundo dos drones FPV</u>, que
+        tem como
+        objetivo capturar imagens incríveis de diferentes lugares e eventos. Para isso, os drones utilizados nessa
+        modalidade são equipados com câmeras de alta resolução e estabilização de imagem avançada, capazes de produzir
+        imagens suaves e nítidas. Os pilotos de cinematografia precisam ser habilidosos em pilotar seus drones de forma
+        precisa e controlada, para capturar as melhores imagens possíveis. A modalidade de cinematografia é
+        frequentemente usada em produções profissionais, como filmes, programas de TV e comerciais, pois permite
+        capturar imagens de diferentes ângulos e perspectivas que seriam impossíveis de outra forma. Além disso, a
+        cinematografia com drones tem ajudado a transformar a forma como a cinematografia é feita em todo o mundo,
+        abrindo novas possibilidades para a indústria cinematográfica e elevando a qualidade das produções.</p>
+
+    <br />
+    <!-- títulos  -->
+    <h4>O sensor BMP280</h4>
+    <br />
+    <!-- exibir o codigo em texto puro -->
+    <pre>
+            #include <Wire.h>
+            #include <SPI.h>
+            #include <Adafruit_BMP280.h>
+            
+            Adafruit_BMP280 bmp; // Objeto BMP280
+            
+            void setup() {
+              Serial.begin(9600);
+              if (!bmp.begin(0x76)) {
+                Serial.println("Não foi possível encontrar o sensor BMP280");
+                while (1);
+              }
+            }
+            
+            void loop() {
+              float temperature = bmp.readTemperature();
+              float pressure = bmp.readPressure() / 100.0F;
+              float altitude = bmp.readAltitude(1013.25); // Pressão ao nível do mar
+            
+              Serial.print("Temperatura: ");
+              Serial.print(temperature);
+              Serial.println(" °C");
+            
+              Serial.print("Pressão: ");
+              Serial.print(pressure);
+              Serial.println(" hPa");
+            
+              Serial.print("Altitude: ");
+              Serial.print(altitude);
+              Serial.println(" m");
+            
+              delay(1000);
+            }            
+    </pre>
+    <br />
+    <!-- parágrafo -->
+    <p>O código acima utiliza o sensor <i>BMP280</i> e a <b>biblioteca Adafruit BMP280</b> para ler dados de
+        temperatura, pressão e altitude do ambiente. Essas informações são importantes para os pilotos de drones FPV,
+        pois permitem ajustar a altitude e a velocidade do drone para as condições atuais do ambiente.</p>
+    <br />
+
+    <!-- Título -->
+    <h4>Equipamentos para drone FPV</h4>
+
+    <!-- listas -->
+    <ol type="A">
+        <li>Drone FPV (quadricóptero, hexacóptero, etc.)</li>
+        <li>Transmissor de vídeo (VTX)</li>
+        <li>Receptor de vídeo (VRX)</li>
+        <li>Câmera FPV</li>
+        <li>Óculos ou monitor FPV</li>
+        <li>Bateria LiPo</li>
+        <li>Carregador de bateria</li>
+        <li>Controladora de voo</li>
+
+
+    </ol>
+
+    <!-- linha de separação -->
+    <hr />
+
+    <h4>Modos de voo em drone FPV</h4>
+
+    <ol type="I">
+        <li>manual: o piloto tem controle total do drone e realiza manobras acrobáticas</li>
+        <li>de estabilização: o drone fica estável e o piloto tem controle apenas sobre a direção do voo</li>
+        <li>GPS: o drone utiliza informações de GPS para manter uma posição fixa ou seguir um trajeto predefinido</li>
+        <li>follow-me: o drone segue automaticamente um objeto ou pessoa em movimento</li>
+        <li>return-to-home (RTH): o drone retorna automaticamente para o ponto de partida em caso de perda de sinal ou
+            bateria fraca</li>
+        <li>Controladora de voo</li>
+
+    </ol>
+    <hr />
+
+    <h4>Acessórios para drones FPV</h4>
+    <ol type="1" start="30">
+        <li>Protetores de hélice: protegem as hélices e evitam danos em caso de colisões</li>
+        <li>Antenas de recepção: melhoram a qualidade do sinal de vídeo recebido pelo drone, aumentando o alcance e a
+            estabilidade da transmissão</li>
+        <li>Luzes de navegação: permitem identificar a posição e a direção do drone em ambientes com pouca luz, além de
+            torná-lo mais visível em locais de grande movimentação</li>
+        <li>Módulos de telemetria: permitem transmitir informações do drone em tempo real para um computador ou
+            smartphone, como altitude, velocidade e temperatura</li>
+        <li>GPS: permite que o drone identifique sua posição em relação aos satélites e utilize informações de navegação
+            para realizar voos mais precisos e autônomos</li>
+        <li>Câmeras de alta qualidade: permitem capturar imagens e vídeos em resoluções mais altas e com maior
+            qualidade, ideais para produções profissionais ou mapeamento aéreo</li>
+        <li>Gimbal: estabiliza a câmera durante o voo, garantindo imagens mais suaves e sem trepidações</li>
+        <li>Mochilas e estojos de transporte: protegem o drone e seus acessórios durante o transporte e facilitam o
+            armazenamento em casa ou durante viagens</li>
+        <li>Carregador de bateria rápido: permite carregar as baterias do drone de forma mais rápida e eficiente,
+            economizando tempo e prolongando a vida útil das baterias</li>
+        <li>Filtros para lentes: permitem controlar a exposição da câmera em ambientes com muita luz solar, evitando
+            imagens superexpostas ou com cores distorcidas.</li>
+    </ol>
+    <hr />
+
+
+</body>
+
+</html>

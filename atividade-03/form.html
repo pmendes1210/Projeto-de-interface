@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+
+
+<body>
+    <h1 align="center">Formulário de torcedor</h1>
+
+    <form class="form-fpv" action="scrip.sql" method="post">
+
+
+        <fieldset class="container">
+            <legend align="center">Dados Pessoais</legend>
+
+            <div>
+                <label>Nome: </label>
+                <input type="text" name="Nome" placeholder="Coloque seu nome">
+                <label>Data de Nacimento: </label>
+                <input type="date" name="DataNasc">
+                <label>E-mail: </label>
+                <input type="email" name="email">
+
+            </div>
+
+            <div>
+                <label>Sobrenome: </label>
+                <input type="text" name="Sobrenome" placeholder="Coloque seu sobrenome">
+                <label>Idade: </label>
+                <input type="number" name="number" minlength="1">
+                <label>Telefone: </label>
+                <input type="tel" name="tel" placeholder="+55(00)99999-9999" maxlength="17">
+            </div>
+        </fieldset>
+
+        <div class="question">
+            <p>Qual tipo de torcedor do flamengo você é?</p>
+            <input type="radio" name="nivel" id="1"> Apaixonado
+            <input type="radio" name="nivel" id="2"> Fanático
+            <input type="radio" name="nivel" id="3"> Simpatizante
+
+            <p>Quem te incetivou a ser torcedor do flamengo?</p>
+            <input type="checkbox" name="incentivo" id="1"> Pai/mãe
+            <input type="checkbox" name="incentivo" id="2"> Avô
+            <input type="checkbox" name="incentivo" id="3"> irmão/irmã
+            <input type="checkbox" name="incentivo" id="4"> Outro
+
+            <p for="torcedor-flamengo">como e porque você se tornou torcedor do flamengo :</p>
+            <input type="text" id="hist-flamengo" name="hist-flamengo"><br>
+
+            <p>Você é flamenguista de qual região?</p>
+            <select name="top-região" id="">
+                <option value=""></option>
+                <option value="Sul">Sul</option>
+                <option value="Sudeste">Sudeste</option>
+                <option value="Norte">Norte </option>
+                <option value="Nordeste">Nordeste </option>
+                <option value="Centro-oeste">Centro-oeste</option>
+                <option value="Outro">Outro</option>
+               
+            </select>
+
+            <p>qual a maior loucura ou promessa você já fez pelo flamengo?</p>
+                <textarea name="proposito" id="" cols="30" rows="3"></textarea>
+            </p>
+
+            <p> campeonato preferido?:</p>
+            <input type="radio" id="camp-brasileiro" name="camp-preferido" value="Brasileiro"> Brasileiro
+            <input type="radio" id="copa-libertadores" name="camp-preferido" value="libertadores"> libertadores
+            <input type="radio" id="copa-brasil" name="camp-preferido" value="copa do brasil"> Copa do brasil
+
+            <p>Uniforme favorito:</p>
+            <input type="text" id="unif-fav" name="unif-fav"><br>
+
+            <p> sobre o flamengo, descreva a sua melhor experiência </p>
+                <textarea name="experiencia" id="" cols="30" rows="3"></textarea>
+            
+           
+            <p>jogador atual preferido?:</p>
+            <select id="fpv-channel" name="fpv-channel">
+                <option value=""></option>
+                <option value="Gabriel B.">Gabriel B.</option>
+                <option value="Arrascaeta">Arrascaeta</option>
+                <option value="Bruno H.">Bruno H.</option>
+                <option value="De la cruz">De la cruz</option>
+                <option value="Everton Cebolinha">Everton Cebolinha</option>
+                <option value="E. Pulgar">E. Pulgar</option>
+                <option value="Pedro">Pedro</option>
+                <option value="Outro">Outro</option>
+            </select><br>
+
+            
+
+            <!-- Botões -->
+            <input type="reset" value="Limpar" name="limpar">
+            <input type="submit" value="Enviar" name="Enviar">
+        </div>
+    </form>
+
+</body>`
+
+</html>
